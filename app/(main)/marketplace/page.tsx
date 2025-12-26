@@ -122,16 +122,16 @@ export default function MarketplacePage() {
             </section>
 
             {/* Category Filter */}
-            <section className="sticky top-20 z-30 bg-background/90 backdrop-blur-md border-b border-burgundy/5 py-4">
-                <div className="container mx-auto px-4 overflow-x-auto">
-                    <div className="flex justify-center gap-4 min-w-max">
+            <section className="sticky top-20 z-30 bg-background/95 backdrop-blur-md border-b border-burgundy/5 py-4">
+                <div className="container mx-auto px-4 overflow-x-auto no-scrollbar">
+                    <div className="flex sm:justify-center gap-4 min-w-max pb-2 sm:pb-0">
                         {CATEGORIES.map((cat) => (
                             <button
                                 key={cat}
                                 onClick={() => setSelectedCategory(cat)}
-                                className={`px-6 py-2 rounded-full text-xs font-bold tracking-widest transition-all ${selectedCategory === cat
-                                        ? "bg-burgundy text-white shadow-lg"
-                                        : "bg-white text-grey-medium border border-burgundy/10 hover:border-burgundy/30"
+                                className={`px-5 py-2 rounded-full text-[10px] font-bold tracking-widest transition-all ${selectedCategory === cat
+                                    ? "bg-burgundy text-white shadow-lg"
+                                    : "bg-white text-grey-medium border border-burgundy/10 hover:border-burgundy/30"
                                     }`}
                             >
                                 {cat}
@@ -142,24 +142,23 @@ export default function MarketplacePage() {
             </section>
 
             {/* Product Grid */}
-            <section className="py-16 container mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="py-12 sm:py-16 container mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
-                    layout
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-10"
                 >
-                    <AnimatePresence mode="popLayout">
+                    <AnimatePresence mode="wait" initial={false}>
                         {filteredProducts.map((product) => (
                             <motion.div
-                                layout
                                 key={product.id}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.3 }}
+                                layout
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.95 }}
+                                transition={{ duration: 0.4, ease: "easeOut" }}
                                 className="group bg-white rounded-3xl overflow-hidden border border-burgundy/5 shadow-sm hover:shadow-2xl transition-all flex flex-col"
                             >
                                 {/* Image Placeholder */}
-                                <div className="h-72 bg-background-secondary relative flex items-center justify-center p-8 overflow-hidden">
+                                <div className="h-64 sm:h-72 bg-gradient-to-b from-background-secondary to-white relative flex items-center justify-center p-8 overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-tr from-burgundy/5 to-transparent flex items-center justify-center">
                                         <div className="text-burgundy/10 font-serif italic text-6xl select-none">NAWI</div>
                                     </div>
@@ -170,7 +169,7 @@ export default function MarketplacePage() {
                                 </div>
 
                                 {/* Product Info */}
-                                <div className="p-8 flex-1 flex flex-col">
+                                <div className="p-6 sm:p-8 flex-1 flex flex-col">
                                     <div className="flex justify-between items-start mb-4">
                                         <span className="text-2xl font-bold text-grey-dark">{product.price}</span>
                                         <div className="flex gap-1">
@@ -184,11 +183,11 @@ export default function MarketplacePage() {
                                         {product.description}
                                     </p>
 
-                                    <div className="mt-auto space-y-4">
-                                        <button className="w-full py-3 rounded-full bg-grey-dark text-white font-bold text-xs tracking-widest hover:bg-burgundy transition-colors shadow-sm">
+                                    <div className="mt-auto space-y-3 sm:space-y-4">
+                                        <button className="w-full py-4 sm:py-3 rounded-full bg-grey-dark text-white font-bold text-[10px] tracking-widest hover:bg-burgundy transition-colors shadow-sm active:scale-95">
                                             ADD TO CART
                                         </button>
-                                        <button className="w-full py-3 rounded-full bg-transparent border border-burgundy/20 text-burgundy font-bold text-xs tracking-widest hover:bg-burgundy/5 transition-colors">
+                                        <button className="w-full py-4 sm:py-3 rounded-full bg-transparent border border-burgundy/20 text-burgundy font-bold text-[10px] tracking-widest hover:bg-burgundy/5 transition-colors active:scale-95">
                                             DISCREET SHIP
                                         </button>
                                     </div>
