@@ -12,12 +12,13 @@ export default function ContactPage() {
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         className="flex-1"
                     >
                         <motion.span
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
+                            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                             className="text-burgundy font-semibold tracking-widest uppercase text-sm mb-4 block"
                         >
                             Discreet Inquiry
@@ -29,7 +30,7 @@ export default function ContactPage() {
                         <motion.p
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ delay: 1 }}
+                            transition={{ delay: 1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                             className="text-lg text-grey-medium mb-10 leading-relaxed italic"
                         >
                             "We design your world. We never know who you are."
@@ -60,7 +61,7 @@ export default function ContactPage() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                         className="flex-1 w-full bg-white rounded-3xl shadow-xl border border-burgundy/5 p-10 md:p-12"
                     >
                         <form className="space-y-6">

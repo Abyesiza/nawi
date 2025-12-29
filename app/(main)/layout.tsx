@@ -13,8 +13,8 @@ export default function MainLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
-      <main className="flex-1 w-full overflow-hidden">
-        <AnimatePresence mode="wait">
+      <main className="flex-1 w-full relative">
+        <AnimatePresence mode="wait" initial={false}>
           <PageTransition key={pathname}>
             {children}
           </PageTransition>

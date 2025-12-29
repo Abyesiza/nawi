@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, Variants } from "framer-motion";
+import { motion, Variants, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 interface AnimatedTextProps {
@@ -19,6 +19,7 @@ export default function AnimatedText({
     once = true
 }: AnimatedTextProps) {
     const [isMounted, setIsMounted] = useState(false);
+    const shouldReduceMotion = useReducedMotion();
 
     useEffect(() => {
         setIsMounted(true);
@@ -29,8 +30,8 @@ export default function AnimatedText({
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: type === "words" ? 0.08 : 0.03,
-                delayChildren: delay
+                staggerChildren: type === "words" ? 0.08 : 0.02,
+                delayChildren: delay,
             },
         },
     };
@@ -41,22 +42,31 @@ export default function AnimatedText({
             y: 0,
             filter: "blur(0px)",
             transition: {
-                type: "spring" as const,
-                damping: 25,
-                stiffness: 120,
+                type: "spring",
+                damping: 30,
+                stiffness: 150,
             },
         },
         hidden: {
             opacity: 0,
-            y: 10,
-            filter: "blur(4px)", // Reduced blur for better performance
+            y: 15,
+            filter: "blur(8px)",
         },
     };
 
     const items = type === "words" ? text.split(" ") : text.split("");
 
-    // If not mounted, show a static or hidden version to prevent hydration flickering
+    // Prevent hydration mismatch while maintaining layout
     if (!isMounted) {
+        return (
+            <span className={`inline-flex flex-wrap ${className}`} style={{ opacity: 0 }}>
+                {text}
+            </span>
+        );
+    }
+
+    // Accessibility fallback
+    if (shouldReduceMotion) {
         return <span className={`inline-flex flex-wrap ${className}`}>{text}</span>;
     }
 
@@ -65,13 +75,15 @@ export default function AnimatedText({
             className={`inline-flex flex-wrap ${className}`}
             variants={container}
             initial="hidden"
-            animate="visible"
+            whileInView={once ? "visible" : undefined}
+            viewport={{ once: once, margin: "-20px" }}
         >
             {items.map((item, index) => (
                 <motion.span
                     variants={child}
                     className={type === "words" ? "mr-[0.25em]" : ""}
                     key={`${item}-${index}`}
+                    style={{ display: "inline-block", willChange: "transform, opacity, filter" }}
                 >
                     {item === " " ? "\u00A0" : item}
                 </motion.span>

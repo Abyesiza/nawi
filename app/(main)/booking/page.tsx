@@ -257,6 +257,7 @@ function BookingForm() {
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl border border-burgundy/5 overflow-hidden"
         >
             {/* Progress Bar */}
@@ -265,7 +266,7 @@ function BookingForm() {
                     initial={{ width: 0 }}
                     animate={{ width: `${Math.min((step / 3) * 100, 100)}%` }}
                     className="h-full bg-burgundy"
-                    transition={{ type: "spring", damping: 20, stiffness: 50 }}
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 />
             </div>
 
@@ -277,6 +278,7 @@ function BookingForm() {
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -20 }}
+                            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                             className="space-y-8"
                         >
                             <div className="text-center mb-10">
@@ -326,6 +328,7 @@ function BookingForm() {
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -20 }}
+                            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                             className="space-y-8"
                         >
                             <div className="text-center mb-10">
@@ -384,6 +387,7 @@ function BookingForm() {
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -20 }}
+                            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                             className="space-y-8"
                         >
                             <div className="text-center mb-10">
@@ -513,6 +517,7 @@ export default function BookingPage() {
                     <motion.span
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                         className="text-burgundy font-semibold tracking-widest uppercase text-sm mb-4 block"
                     >
                         Reservation

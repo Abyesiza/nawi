@@ -146,7 +146,7 @@ export default function MarketplacePage() {
                 <motion.div
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-10"
                 >
-                    <AnimatePresence mode="wait" initial={false}>
+                    <AnimatePresence mode="popLayout" initial={false}>
                         {filteredProducts.map((product) => (
                             <motion.div
                                 key={product.id}
@@ -154,7 +154,7 @@ export default function MarketplacePage() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0.95 }}
-                                transition={{ duration: 0.4, ease: "easeOut" }}
+                                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                                 className="group bg-white rounded-3xl overflow-hidden border border-burgundy/5 shadow-sm hover:shadow-2xl transition-all flex flex-col"
                             >
                                 {/* Image Placeholder */}

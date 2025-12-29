@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-burgundy/10 backdrop-blur-md bg-background/80">
+    <header className="sticky top-0 z-50 w-full border-b border-burgundy/10 backdrop-blur-md bg-background/80 supports-[backdrop-filter]:backdrop-blur-md transition-shadow duration-300">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
@@ -31,7 +32,7 @@ export default function Header() {
               href="/scenenaries"
               className="text-sm font-semibold text-grey-dark transition-colors hover:text-burgundy"
             >
-              Honey Experiences
+              Honey Moon Experiences
             </Link>
             <Link
               href="/marketplace"
@@ -72,45 +73,53 @@ export default function Header() {
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-6 space-y-4 border-t border-burgundy/5 animate-in fade-in slide-in-from-top-4">
-            <Link
-              href="/"
-              onClick={() => setIsMenuOpen(false)}
-              className="block text-base font-semibold text-grey-dark hover:text-burgundy"
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              className="md:hidden py-6 space-y-4 border-t border-burgundy/5 overflow-hidden"
             >
-              Home
-            </Link>
-            <Link
-              href="/scenenaries"
-              onClick={() => setIsMenuOpen(false)}
-              className="block text-base font-semibold text-grey-dark hover:text-burgundy"
-            >
-              Honey Experiences
-            </Link>
-            <Link
-              href="/marketplace"
-              onClick={() => setIsMenuOpen(false)}
-              className="block text-base font-semibold text-grey-dark hover:text-burgundy"
-            >
-              Marketplace
-            </Link>
-            <Link
-              href="/about"
-              onClick={() => setIsMenuOpen(false)}
-              className="block text-base font-semibold text-grey-dark hover:text-burgundy"
-            >
-              About
-            </Link>
-            <Link
-              href="/booking"
-              onClick={() => setIsMenuOpen(false)}
-              className="inline-block rounded-full bg-burgundy px-8 py-3 text-sm font-bold text-white w-full text-center"
-            >
-              Book Now
-            </Link>
-          </div>
-        )}
+              <Link
+                href="/"
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-base font-semibold text-grey-dark hover:text-burgundy transition-colors"
+              >
+                Home
+              </Link>
+              <Link
+                href="/scenenaries"
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-base font-semibold text-grey-dark hover:text-burgundy transition-colors"
+              >
+                Honey Moon Experiences
+              </Link>
+              <Link
+                href="/marketplace"
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-base font-semibold text-grey-dark hover:text-burgundy transition-colors"
+              >
+                Marketplace
+              </Link>
+              <Link
+                href="/about"
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-base font-semibold text-grey-dark hover:text-burgundy transition-colors"
+              >
+                About
+              </Link>
+              <Link
+                href="/booking"
+                onClick={() => setIsMenuOpen(false)}
+                className="inline-block rounded-full bg-burgundy px-8 py-3 text-sm font-bold text-white w-full text-center hover:bg-burgundy-light transition-colors"
+              >
+                Book Now
+              </Link>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
     </header>
   );
