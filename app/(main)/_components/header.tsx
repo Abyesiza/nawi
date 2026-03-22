@@ -32,13 +32,7 @@ export default function Header() {
               href="/scenenaries"
               className="text-sm font-semibold text-grey-dark transition-colors hover:text-burgundy"
             >
-              Honey Moon Experiences
-            </Link>
-            <Link
-              href="/marketplace"
-              className="text-sm font-semibold text-grey-dark transition-colors hover:text-burgundy"
-            >
-              Marketplace
+              Experiences
             </Link>
             <Link
               href="/about"

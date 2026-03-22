@@ -83,7 +83,7 @@ export default function ScenenariesPage() {
                         The Collection
                     </motion.span>
                     <h1 className="text-5xl sm:text-7xl font-bold text-grey-dark mb-10 tracking-tight leading-tight">
-                        <AnimatedText text="Honey Moon Experiences" type="letters" />
+                        <AnimatedText text="Experiences" type="letters" />
                     </h1>
                     <motion.p
                         initial={{ opacity: 0 }}
