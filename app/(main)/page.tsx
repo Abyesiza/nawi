@@ -46,21 +46,21 @@ export default function HomePage() {
               </span>
             </motion.div>
 
-            <h1 className="text-4xl font-bold tracking-tight text-grey-dark sm:text-6xl lg:text-8xl leading-[1.1] mb-8">
+            <h1 className="text-3xl font-bold tracking-tight text-grey-dark sm:text-5xl lg:text-6xl leading-[1.1] mb-8">
               <AnimatedText
-                text="Curated Romance."
+                text="Curated Moments."
                 className="block"
                 type="letters"
               />
               <AnimatedText
-                text="Designed Intimacy."
+                text="Designed Emotion."
                 className="block text-burgundy italic font-serif"
                 type="letters"
                 delay={0.5}
               />
               <AnimatedText
                 text="Absolute Discretion."
-                className="block text-3xl sm:text-5xl lg:text-6xl mt-6 opacity-90"
+                className="block text-2xl sm:text-4xl lg:text-5xl mt-6 opacity-90"
                 type="words"
                 delay={1.2}
               />
@@ -70,9 +70,9 @@ export default function HomePage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 2, duration: 1 }}
-              className="mt-10 text-xl sm:text-2xl leading-relaxed text-grey-medium max-w-3xl mx-auto font-light"
+              className="mt-10 text-lg sm:text-xl leading-relaxed text-grey-medium max-w-3xl mx-auto font-light"
             >
-              We design unforgettable romantic moments for couples who believe love deserves intention, beauty, and privacy.
+              From honeymoons and birthdays to proposals and anniversaries — we design unforgettable experiences for every milestone worth celebrating.
             </motion.p>
 
             <motion.div
@@ -118,10 +118,10 @@ export default function HomePage() {
           <div className="flex flex-col lg:flex-row items-center gap-20">
             <div className="flex-1">
               <span className="text-burgundy font-semibold tracking-widest uppercase text-sm mb-4 block">Signature Experience</span>
-              <h2 className="text-5xl font-bold text-grey-dark mb-8 leading-tight">
+              <h2 className="text-4xl font-bold text-grey-dark mb-8 leading-tight">
                 Honey Moon Experiences
               </h2>
-              <p className="text-xl text-grey-medium mb-10 leading-relaxed font-light">
+              <p className="text-base text-grey-medium mb-10 leading-relaxed font-light">
                 Our flagship offering created for couples who want more than a dinner date or a hotel stay.
                 Honey Moon Experiences is a fully curated romantic journey, designed around emotion, atmosphere, and flow.
               </p>
@@ -198,8 +198,8 @@ export default function HomePage() {
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-4xl font-bold text-grey-dark mb-6">How the Experience Works</h2>
-            <p className="text-lg text-grey-medium font-light">
+            <h2 className="text-3xl font-bold text-grey-dark mb-6">How the Experience Works</h2>
+            <p className="text-base text-grey-medium font-light">
               Designing your perfect moment is an effortless and discreet process.
             </p>
           </div>
@@ -248,10 +248,10 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="lg:w-1/2">
-              <h2 className="text-4xl sm:text-5xl font-bold mb-8 leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-8 leading-tight">
                 Absolute Privacy, <br /><span className="text-white/60 italic font-serif">By Design</span>
               </h2>
-              <p className="text-xl mb-12 text-white/80 font-light leading-relaxed">
+              <p className="text-base mb-12 text-white/80 font-light leading-relaxed">
                 Privacy is not a feature at Nawi—it is our foundation. We operate on a privacy-first identity model, ensuring every client enjoys complete discretion.
               </p>
 
@@ -300,10 +300,10 @@ export default function HomePage() {
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-grey-dark mb-10">
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-grey-dark mb-10">
               Begin Your Experience
             </h2>
-            <p className="mb-14 text-xl sm:text-2xl text-grey-medium italic font-serif opacity-80">
+            <p className="mb-14 text-lg sm:text-xl text-grey-medium italic font-serif opacity-80">
               "Love has no limits. We design the world around yours."
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">

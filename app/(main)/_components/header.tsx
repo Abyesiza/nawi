@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -14,10 +15,19 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-2xl font-bold tracking-tighter transition-all hover:opacity-80 text-burgundy flex items-center gap-2"
+            className="transition-all hover:opacity-80 flex items-center gap-3"
           >
-            <div className="w-8 h-8 rounded-full border-2 border-burgundy flex items-center justify-center font-serif italic text-sm">N</div>
-            NAWI
+            <Image
+              src="/nawilogo.png"
+              alt="Nawi Experiences"
+              width={120}
+              height={48}
+              className="h-12 w-auto object-contain"
+              priority
+            />
+            <span className="text-burgundy font-bold tracking-tight text-lg leading-tight hidden sm:block">
+              Nawi <span className="font-light italic">Experiences</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

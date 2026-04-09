@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,8 +12,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
           {/* Brand Info */}
           <div className="lg:col-span-1">
-            <Link href="/" className="text-2xl font-bold text-burgundy tracking-tighter block mb-6">
-              NAWI
+            <Link href="/" className="flex items-center gap-3 mb-6 hover:opacity-80 transition-opacity">
+              <Image
+                src="/nawilogo.png"
+                alt="Nawi Experiences"
+                width={100}
+                height={40}
+                className="h-10 w-auto object-contain"
+              />
+              <span className="text-burgundy font-bold tracking-tight text-lg leading-tight">
+                Nawi <span className="font-light italic">Experiences</span>
+              </span>
             </Link>
             <p className="text-grey-medium text-sm leading-relaxed mb-8 max-w-sm">
               Designing unforgettable romantic moments for couples who believe love deserves intention, beauty, and absolute privacy.

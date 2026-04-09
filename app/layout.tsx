@@ -13,9 +13,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nawi | Premium Romantic Experience Designers",
-  description: "Bespoke romantic, fantasy, and experimental experiences designed with absolute anonymity and professional discretion.",
-  keywords: ["romantic experiences", "fantasy rooms", "discreet events", "nawi", "honey experiences"],
+  title: "Nawi Experiences | Uganda's Premier Event & Experience Designers",
+  description: "Nawi Experiences is your trusted partner for unforgettable events — from honeymoons and romantic getaways to birthdays, anniversaries, proposals, and bespoke celebrations. Every detail, curated to perfection.",
+  keywords: [
+    "nawi experiences",
+    "event organizers Uganda",
+    "honeymoon planners",
+    "romantic experiences",
+    "birthday event designers",
+    "anniversary celebrations",
+    "proposal planners",
+    "bespoke events",
+    "luxury event planning",
+    "private celebrations",
+    "curated experiences",
+    "intimate events Uganda",
+  ],
+  openGraph: {
+    title: "Nawi Experiences | Uganda's Premier Event & Experience Designers",
+    description: "From honeymoons to birthdays — we design extraordinary moments for every milestone. Curated. Intimate. Unforgettable.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
