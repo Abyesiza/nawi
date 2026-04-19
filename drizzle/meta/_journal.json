@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1776596503726,
+      "tag": "0000_flowery_rumiko_fujikawa",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1776599029841,
+      "tag": "0001_handy_micromacro",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1776601325639,
+      "tag": "0002_cool_pet_avengers",
+      "breakpoints": true
+    }
+  ]
+}

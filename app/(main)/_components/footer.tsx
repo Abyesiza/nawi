@@ -20,8 +20,9 @@ export default function Footer() {
                 height={40}
                 className="h-10 w-auto object-contain"
               />
-              <span className="text-burgundy font-bold tracking-tight text-lg leading-tight">
-                Nawi <span className="font-light italic">Experiences</span>
+              <span className="leading-tight">
+                <span className="block text-burgundy font-bold tracking-tight text-base">Nawi</span>
+                <span className="block text-burgundy/60 text-[9px] font-bold tracking-[0.32em] uppercase">Experiences</span>
               </span>
             </Link>
             <p className="text-grey-medium text-sm leading-relaxed mb-8 max-w-sm">
@@ -37,8 +38,8 @@ export default function Footer() {
           <div>
             <h4 className="text-grey-dark font-bold text-sm uppercase tracking-widest mb-8">Experiences</h4>
             <ul className="space-y-4">
-              <li><Link href="/scenenaries" className="text-grey-medium text-sm hover:text-burgundy transition-colors">Honey Moon Experiences</Link></li>
-              <li><Link href="/scenenaries" className="text-grey-medium text-sm hover:text-burgundy transition-colors">Bespoke Scenes</Link></li>
+              <li><Link href="/experiences" className="text-grey-medium text-sm hover:text-burgundy transition-colors">Honey Moon Experiences</Link></li>
+              <li><Link href="/experiences" className="text-grey-medium text-sm hover:text-burgundy transition-colors">Bespoke Scenes</Link></li>
               <li><Link href="/marketplace" className="text-grey-medium text-sm hover:text-burgundy transition-colors">Artisanal Market</Link></li>
             </ul>
           </div>

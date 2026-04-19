@@ -82,7 +82,7 @@ export default function HomePage() {
               className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-8"
             >
               <Link
-                href="/scenenaries"
+                href="/experiences"
                 className="group relative inline-flex items-center justify-center rounded-full bg-burgundy px-12 py-5 text-lg font-semibold text-white shadow-2xl transition-all hover:bg-burgundy-light hover:scale-105 active:scale-95"
                 style={{ boxShadow: '0 15px 35px -10px var(--burgundy-shadow)' }}
               >
@@ -154,7 +154,7 @@ export default function HomePage() {
               </div>
 
               <Link
-                href="/scenenaries"
+                href="/experiences"
                 className="inline-flex items-center text-burgundy font-bold text-lg hover:gap-3 transition-all group"
               >
                 Explore Bespoke Scenes
@@ -169,20 +169,28 @@ export default function HomePage() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="flex-1 w-full aspect-[4/5] bg-white rounded-[2rem] shadow-2xl border border-burgundy/5 flex items-center justify-center p-16 text-center relative overflow-hidden group"
+              className="flex-1 w-full aspect-[4/5] rounded-[2rem] shadow-2xl border border-burgundy/5 relative overflow-hidden group"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-burgundy/10 via-transparent to-burgundy/5 opacity-50 transition-opacity group-hover:opacity-70" />
-              <div className="relative z-10">
-                <span className="text-burgundy/40 text-sm italic mb-4 block">Visual Inspiration</span>
-                <h3 className="text-3xl font-serif italic text-burgundy mb-6">"Where imagination meets intimacy."</h3>
-                <p className="text-grey-medium italic text-lg leading-relaxed">
-                  Every detail—from scent to sound—is curated to support the mood you desire.
-                </p>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80"
+                alt="Candle-lit romantic dinner setup"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-burgundy/70 via-burgundy/20 to-transparent" />
+              <div className="absolute inset-0 flex items-end p-10">
+                <div className="text-white">
+                  <span className="text-white/70 text-[10px] tracking-[0.3em] uppercase mb-3 block">Signature Moment</span>
+                  <h3 className="text-3xl font-serif italic mb-3">"Where imagination meets intimacy."</h3>
+                  <p className="text-white/80 italic text-sm leading-relaxed font-light">
+                    Every detail — from scent to sound — is curated to support the mood you desire.
+                  </p>
+                </div>
               </div>
 
               {/* Decorative corners */}
-              <div className="absolute top-8 left-8 w-12 h-12 border-t-2 border-l-2 border-burgundy/20 rounded-tl-xl" />
-              <div className="absolute bottom-8 right-8 w-12 h-12 border-b-2 border-r-2 border-burgundy/20 rounded-br-xl" />
+              <div className="absolute top-6 left-6 w-12 h-12 border-t-2 border-l-2 border-white/40 rounded-tl-xl" />
+              <div className="absolute bottom-6 right-6 w-12 h-12 border-b-2 border-r-2 border-white/40 rounded-br-xl" />
             </motion.div>
           </div>
         </div>
@@ -229,6 +237,62 @@ export default function HomePage() {
                   <p className="text-grey-medium leading-relaxed font-light">
                     {item.desc}
                   </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Atmosphere Gallery */}
+      <motion.section
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="py-32 bg-background"
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-burgundy font-semibold tracking-[0.3em] uppercase text-xs mb-4 block">
+              Atmosphere
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-grey-dark mb-6 leading-tight">
+              A Few Moods We Compose
+            </h2>
+            <p className="text-base text-grey-medium font-light">
+              Imagery is suggestive — your scene will be designed exclusively for you.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {[
+              { src: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=800&q=80", label: "Rose Petals" },
+              { src: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80", label: "Champagne" },
+              { src: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80", label: "Suite" },
+              { src: "https://images.unsplash.com/photo-1518562180175-34a163b1a9a6?auto=format&fit=crop&w=800&q=80", label: "Forest Cabin" },
+              { src: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80", label: "Candles" },
+              { src: "https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=800&q=80", label: "Skyline" },
+              { src: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=800&q=80", label: "Ocean Suite" },
+              { src: "https://images.unsplash.com/photo-1485872299712-c8c4f4a09e3a?auto=format&fit=crop&w=800&q=80", label: "Bouquet" },
+            ].map((tile, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.05 }}
+                viewport={{ once: true }}
+                className="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer shadow-md"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={tile.src}
+                  alt={tile.label}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute bottom-3 left-3 right-3">
+                  <p className="text-white text-xs font-bold tracking-widest uppercase">{tile.label}</p>
                 </div>
               </motion.div>
             ))}

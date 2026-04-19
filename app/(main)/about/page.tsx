@@ -23,8 +23,15 @@ export default function AboutPage() {
     return (
         <div className="min-h-screen">
             {/* Hero Section */}
-            <section className="py-24 sm:py-32 bg-background border-b border-burgundy/5">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-balance">
+            <section className="relative py-32 sm:py-44 border-b border-burgundy/5 overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                    src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=80"
+                    alt="Soft romantic atmosphere"
+                    className="absolute inset-0 w-full h-full object-cover opacity-25"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-background via-background/85 to-background" />
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-balance relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -88,13 +95,19 @@ export default function AboutPage() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1 }}
                             viewport={{ once: true }}
-                            className="aspect-square bg-white rounded-[2.5rem] shadow-sm border border-burgundy/10 relative overflow-hidden flex items-center justify-center p-16"
+                            className="aspect-square rounded-[2.5rem] shadow-xl border border-burgundy/10 relative overflow-hidden"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-tr from-burgundy/10 to-transparent opacity-50" />
-                            <div className="text-center relative z-10">
-                                <span className="text-burgundy/30 text-xs tracking-widest uppercase mb-4 block">Our Specialization</span>
-                                <h3 className="text-3xl font-serif italic text-burgundy mb-6">"Bespoke Romantic Environments"</h3>
-                                <p className="text-grey-medium italic text-lg leading-relaxed font-light">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="https://images.unsplash.com/photo-1526887520775-4b14b8aed897?auto=format&fit=crop&w=1200&q=80"
+                                alt="Romantic candle-lit table setting"
+                                className="absolute inset-0 w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-burgundy/80 via-burgundy/30 to-transparent" />
+                            <div className="absolute inset-0 flex flex-col justify-end p-12">
+                                <span className="text-white/70 text-[10px] tracking-[0.3em] uppercase mb-3 block">Our Specialization</span>
+                                <h3 className="text-3xl font-serif italic text-white mb-4">"Bespoke Romantic Environments"</h3>
+                                <p className="text-white/80 italic text-base leading-relaxed font-light">
                                     Crafted scenes that awaken emotion, deepen connection, and transform ordinary spaces into extraordinary memories.
                                 </p>
                             </div>

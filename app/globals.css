@@ -105,3 +105,17 @@ body {
   background-color: var(--color-burgundy);
   color: white;
 }
+
+/* Hide scrollbar but keep scroll (category filters, horizontal lists) */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* iOS safe area for bottom nav */
+.h-safe-area-inset-bottom {
+  height: env(safe-area-inset-bottom, 0px);
+}

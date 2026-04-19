@@ -9,9 +9,10 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
-
+.agents
 # testing
 /coverage
+skills-lock.json
 
 # next.js
 /.next/

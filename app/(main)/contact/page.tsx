@@ -5,9 +5,18 @@ import AnimatedText from "../_components/animated-text";
 
 export default function ContactPage() {
     return (
-        <div className="min-h-screen py-24 bg-background">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-20 items-center">
+        <div className="min-h-screen relative overflow-hidden bg-background">
+            {/* Decorative backdrop */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+                src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1800&q=80"
+                alt=""
+                aria-hidden
+                className="absolute inset-x-0 top-0 h-[60vh] w-full object-cover opacity-15"
+            />
+            <div className="absolute inset-x-0 top-0 h-[60vh] bg-gradient-to-b from-transparent via-background/70 to-background" />
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
+                <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-16 items-center">
 
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
